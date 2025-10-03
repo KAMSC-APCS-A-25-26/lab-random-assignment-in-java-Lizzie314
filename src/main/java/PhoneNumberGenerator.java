@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.lang.String;
 
 public class PhoneNumberGenerator {
     public static void main(String[] args) {
@@ -12,12 +13,13 @@ public class PhoneNumberGenerator {
         // TODO: Generate second three digits (XXX) 
         // Constraint: Must be <= 742 (000-742)
         int num4 = rand.nextInt(742);
+        String str = String.format("%03d", num4);
         // TODO: Generate third three digits (XXX)
         int num7 = rand.nextInt(8) + 1;
         int num8 = rand.nextInt(8) + 1;
         int num9 = rand.nextInt(8) + 1;
         
         // TODO: Format and display phone number as XXX-XXX-XXX
-        System.out.printf("%d%d%d-%d-%d%d%d", num1, num2, num3, num4, num7, num8, num9);
+        System.out.printf("%d%d%d-%s-%d%d%d", num1, num2, num3, str, num7, num8, num9);
     }
 }
